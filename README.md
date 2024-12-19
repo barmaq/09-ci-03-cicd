@@ -1,15 +1,5 @@
 # Домашнее задание к занятию 9 «Процессы CI/CD»
 
-## Подготовка к выполнению
-
-1. Создайте два VM в Yandex Cloud с параметрами: 2CPU 4RAM Centos7 (остальное по минимальным требованиям).
-2. Пропишите в [inventory](./infrastructure/inventory/cicd/hosts.yml) [playbook](./infrastructure/site.yml) созданные хосты.
-3. Добавьте в [files](./infrastructure/files/) файл со своим публичным ключом (id_rsa.pub). Если ключ называется иначе — найдите таску в плейбуке, которая использует id_rsa.pub имя, и исправьте на своё.
-4. Запустите playbook, ожидайте успешного завершения.
-5. Проверьте готовность SonarQube через [браузер](http://localhost:9000).
-6. Зайдите под admin\admin, поменяйте пароль на свой.
-7.  Проверьте готовность Nexus через [бразуер](http://localhost:8081).
-8. Подключитесь под admin\admin123, поменяйте пароль, сохраните анонимный доступ.
 
 ## Знакомоство с SonarQube
 
@@ -25,6 +15,41 @@
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
 
+### Решение
+1. создаем проект barmaq, добавляем токен
+2. качаем и ставим сонар. у меня в винду
+*   https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/
+3. добавляем в PATH
+*   setx PATH "%PATH%;C:\Users\victorsh\Documents\sonar-scanner-6.2.1.4610-windows-x64\bin"
+4. sonar-scanner --version  
+*   11:53:20.928 INFO  Scanner configuration file: C:\Users\victorsh\Documents\sonar-scanner-6.2.1.4610-windows-x64\bin\..\conf\sonar-scanner.properties
+*   11:53:20.931 INFO  Project root configuration file: NONE
+*   11:53:20.947 INFO  SonarScanner CLI 6.2.1.4610
+*   11:53:20.949 INFO  Java 17.0.12 Eclipse Adoptium (64-bit)
+*   11:53:20.950 INFO  Windows 11 10.0 amd64
+5. запускаем
+*   sonar-scanner.bat -D"sonar.projectKey=barmaq" -D"sonar.sources=." -D"sonar.host.url=http://89.169.146.8:9000" -D"sonar.login=<token>" -D"sonar.coverage.exclusion=fail.py
+6. смотрим результат в вебинтерфейсе
+7. испрвляем :
+
+'def increment(index=0):
+    index += 1
+    return index
+def get_square(numb):
+    return numb*numb
+def print_numb(numb):
+    print("Number is {}".format(numb))
+
+index = 0
+while (index < 10):
+    index = increment(index)
+    print(get_square(index))
+    '
+8. запускаем повторно
+9. ![результат](./sonar test.png)
+
+  
+    
 ## Знакомство с Nexus
 
 ### Основная часть
