@@ -1,0 +1,14 @@
+ansible-playbook site.yml -i inventory/cicd/hosts.yml
+
+
+установить более старую версию ансибл в виртуальное окружение
+bash-5.2$ python3 -m venv venv # create new venv in a directory "venv"
+bash-5.2$ . venv/bin/activate # if you are using fish, use: . venv/bin/activate.fish
+(venv) bash-5.2$ pip3 install "ansible-core<2.17"
+
+в итоге с centos7 надо работать с ансибл версии 2.1 не старше
+CentOS-Base.repo поменять на свой с репозитриями из vault
+версия посгрес - поменять на 12ю
+поменять захардкоженные значения 11 версии на 12
+поставить в нескольких местах полные права админа через become_true
+
