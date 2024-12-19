@@ -22,17 +22,17 @@
 3. добавляем в PATH
 *   setx PATH "%PATH%;C:\Users\victorsh\Documents\sonar-scanner-6.2.1.4610-windows-x64\bin"
 4. sonar-scanner --version  
-*   11:53:20.928 INFO  Scanner configuration file: C:\Users\victorsh\Documents\sonar-scanner-6.2.1.4610-windows-x64\bin\..\conf\sonar-scanner.properties
-*   11:53:20.931 INFO  Project root configuration file: NONE
-*   11:53:20.947 INFO  SonarScanner CLI 6.2.1.4610
-*   11:53:20.949 INFO  Java 17.0.12 Eclipse Adoptium (64-bit)
-*   11:53:20.950 INFO  Windows 11 10.0 amd64
+```   11:53:20.928 INFO  Scanner configuration file: C:\Users\victorsh\Documents\sonar-scanner-6.2.1.4610-windows-x64\bin\..\conf\sonar-scanner.properties
+   11:53:20.931 INFO  Project root configuration file: NONE
+   11:53:20.947 INFO  SonarScanner CLI 6.2.1.4610
+   11:53:20.949 INFO  Java 17.0.12 Eclipse Adoptium (64-bit)
+   11:53:20.950 INFO  Windows 11 10.0 amd64```
 5. запускаем
 *   sonar-scanner.bat -D"sonar.projectKey=barmaq" -D"sonar.sources=." -D"sonar.host.url=http://89.169.146.8:9000" -D"sonar.login=<token>" -D"sonar.coverage.exclusion=fail.py
 6. смотрим результат в вебинтерфейсе
 7. испрвляем :
 
-'def increment(index=0):
+```def increment(index=0):
     index += 1
     return index
 def get_square(numb):
@@ -44,7 +44,7 @@ index = 0
 while (index < 10):
     index = increment(index)
     print(get_square(index))
-    '
+    ```
 8. запускаем повторно
 9. ![результат](./sonar test.png)
 
