@@ -78,7 +78,7 @@ while (index < 10):
 ```
 2. повторяем с этим же файлом но указываем версию 8_102
 3. просматриваем в веб интерфейсе (browse  maven-public)
-4. ![maven-metadata.xml](./maven-metadata.xml)
+4. [maven-metadata.xml](./maven-metadata.xml)
 
 ### Знакомство с Maven
 
@@ -104,7 +104,7 @@ while (index < 10):
 ls /home/barmaq/.m2/repository/netology/java/8_282
 java-8_282-distrib.tar.gz  java-8_282-distrib.tar.gz.sha1  java-8_282.pom.lastUpdated  java-8_282-somecdistriblass.tar.gz.lastUpdated  _remote.repositories
 ```
-4.  ![mpom.xml](./mvn/pom.xml)
+4.  [mpom.xml](./mvn/pom.xml)
    
 
 
