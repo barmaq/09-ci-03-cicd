@@ -47,7 +47,8 @@ while (index < 10):
     print(get_square(index))
 ```
 8. запускаем повторно
-9. ![результат](./sonar test.png)
+9.
+    ![результат](./sonar test.png)
   
     
 ## Знакомство с Nexus
