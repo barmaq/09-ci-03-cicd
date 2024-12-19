@@ -67,15 +67,20 @@ while (index < 10):
 3. Проверьте, что все файлы загрузились успешно.
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 
+### Решение
+1. переходим на сайт , upload загружаю fail.py с параметрами :
+```
+	groupId: netology;
+	artifactId: java;
+	version: 8_282;
+	classifier: distrib;
+	type: tar.gz.
+```
+2. повторяем с этим же файлом но указываем версию 8_102
+3. просматриваем в веб интерфейсе (browse  maven-public)
+4. ![maven-metadata.xml](./maven-metadata.xml)
+
 ### Знакомство с Maven
-
-### Подготовка к выполнению
-
-1. Скачайте дистрибутив с [maven](https://maven.apache.org/download.cgi).
-2. Разархивируйте, сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
-3. Удалите из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем HTTP- соединение — раздел mirrors —> id: my-repository-http-unblocker.
-4. Проверьте `mvn --version`.
-5. Заберите директорию [mvn](./mvn) с pom.
 
 ### Основная часть
 
@@ -84,10 +89,25 @@ while (index < 10):
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
 4. В ответе пришлите исправленный файл `pom.xml`.
 
----
+### Решение
 
-### Как оформить решение задания
+1. подготавливаем pom.xml
+   указываем адрес нексуса  
+   http://89.169.150.121:8081/repository/maven-public/  
+   заполняем поял с информацией о релизе
+2. mvn package
+```
+[INFO] BUILD SUCCESS
+```
+3. смотрим содержиое локального репозитория
+```
+ls /home/barmaq/.m2/repository/netology/java/8_282
+java-8_282-distrib.tar.gz  java-8_282-distrib.tar.gz.sha1  java-8_282.pom.lastUpdated  java-8_282-somecdistriblass.tar.gz.lastUpdated  _remote.repositories
+```
+4.  ![mpom.xml](./mvn/pom.xml)
+   
 
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
+
+
 
 ---
