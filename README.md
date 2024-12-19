@@ -104,7 +104,7 @@ while (index < 10):
 ls /home/barmaq/.m2/repository/netology/java/8_282
 java-8_282-distrib.tar.gz  java-8_282-distrib.tar.gz.sha1  java-8_282.pom.lastUpdated  java-8_282-somecdistriblass.tar.gz.lastUpdated  _remote.repositories
 ```
-4.  [mpom.xml](./mvn/pom.xml)
+4.  [pom.xml](./mvn/pom.xml)
    
 
 
