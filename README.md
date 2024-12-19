@@ -26,7 +26,8 @@
    11:53:20.931 INFO  Project root configuration file: NONE
    11:53:20.947 INFO  SonarScanner CLI 6.2.1.4610
    11:53:20.949 INFO  Java 17.0.12 Eclipse Adoptium (64-bit)
-   11:53:20.950 INFO  Windows 11 10.0 amd64```
+   11:53:20.950 INFO  Windows 11 10.0 amd64
+```
 5. запускаем
 *   sonar-scanner.bat -D"sonar.projectKey=barmaq" -D"sonar.sources=." -D"sonar.host.url=http://89.169.146.8:9000" -D"sonar.login=<token>" -D"sonar.coverage.exclusion=fail.py
 6. смотрим результат в вебинтерфейсе
@@ -44,7 +45,7 @@ index = 0
 while (index < 10):
     index = increment(index)
     print(get_square(index))
-    ```
+```
 8. запускаем повторно
 9. ![результат](./sonar test.png)
 
